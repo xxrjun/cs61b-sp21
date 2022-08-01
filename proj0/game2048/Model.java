@@ -114,13 +114,16 @@ public class Model extends Observable {
         // for the tilt to the Side SIDE. If the board changed, set the
         // changed local variable to true.
 
-        // Do up first
-        /*
-            Idea : 由上往下看，有 merged 那就要將下面的往上多推
-         */
+        // 設定 view perspective，以處理各個方向
+        board.setViewingPerspective(side);
+
+        // 針對每一 column 做處理
         for (int c = 0 ; c < board.size() ; c++) {
             if(handleTileSingleColumn(c)) changed = true;
         }
+
+        // 將 board 轉回 North side
+        board.setViewingPerspective(Side.NORTH);
 
         checkGameOver();
         if (changed) {
@@ -130,40 +133,54 @@ public class Model extends Observable {
     }
 
     /*
-    Tile helper function: c is column.
-    Returns true if changed.
+        Tile helper function: c is column.
+        Returns true if changed.
     */
     private boolean handleTileSingleColumn(int c) {
         boolean changed;
         changed = false;
 
-        for (int r = 3; r >= 0; r--){
+        boolean [][] isMergedTable = new boolean[4][4];
+
+        for (int r = 2; r >= 0; r--){
             if(board.tile(c, r) != null) {
                 Tile t = board.tile(c, r);
 
                 boolean isMerged = false;
 
+
+                // Record the row where tile merges
+                int changedRow = 0;
+
                 // 1. move up if the space above it is empty
                 // 2. or it can move up one if the space above it has the same value as itself
-                if((r < 3 && board.tile(c, 3) == null) || t.value() == board.tile(c, 3).value()) {
+                // check whether the tile has been merged this round
+                if(!isMergedTable[3][c] && ((r < 3 && board.tile(c, 3) == null) || t.value() == board.tile(c, 3).value())) {
                     isMerged = board.move(c, 3, t);
-                } else if ((r < 2 && board.tile(c, 2) == null) || t.value() == board.tile(c, 2).value()) {
+                    changedRow = 3;
+                    changed = true;
+                } else if (!isMergedTable[2][c] && ((r < 2 && board.tile(c, 2) == null) || t.value() == board.tile(c, 2).value())){
                     isMerged = board.move(c, 2, t);
-                } else if ((r < 1 && board.tile(c, 1) == null) || t.value() == board.tile(c, 1).value()) {
+                    changedRow = 2;
+                    changed = true;
+                } else if (!isMergedTable[1][c] && ((r < 1 && board.tile(c, 1) == null) || t.value() == board.tile(c, 1).value())) {
                     isMerged = board.move(c, 1, t);
+                    changedRow = 1;
+                    changed = true;
                 }
 
                 // Handle score
                 if (isMerged) {
                     // This move is merged, score increases.
-                    score += board.tile(c, 3).value();
+                    score += board.tile(c, changedRow).value();
 
+                    // update isMergedTable
+                    isMergedTable[changedRow][c] = true;
                 } else {
                     // This move is not merged, score has no change.
                     score += 0;
                 }
 
-                changed = true;
             }
         }
 
