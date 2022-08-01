@@ -132,7 +132,7 @@ public class Model extends Observable {
         return changed;
     }
 
-    /*
+    /**
         Tile helper function: c is column.
         Returns true if changed.
     */
@@ -155,15 +155,15 @@ public class Model extends Observable {
                 // 1. move up if the space above it is empty
                 // 2. or it can move up one if the space above it has the same value as itself
                 // check whether the tile has been merged this round
-                if(!isMergedTable[3][c] && ((r < 3 && board.tile(c, 3) == null) || t.value() == board.tile(c, 3).value())) {
+                if(!isMergedTable[3][c] && ((r < 3 && board.tile(c, 3) == null) || hasSameValue(t, board.tile(c, 3)) && noTilesAbove(3, r, c))) {
                     isMerged = board.move(c, 3, t);
                     changedRow = 3;
                     changed = true;
-                } else if (!isMergedTable[2][c] && ((r < 2 && board.tile(c, 2) == null) || t.value() == board.tile(c, 2).value())){
+                } else if (!isMergedTable[2][c] && ((r < 2 && board.tile(c, 2) == null) || hasSameValue(t, board.tile(c, 2)) && noTilesAbove(2, r, c))){
                     isMerged = board.move(c, 2, t);
                     changedRow = 2;
                     changed = true;
-                } else if (!isMergedTable[1][c] && ((r < 1 && board.tile(c, 1) == null) || t.value() == board.tile(c, 1).value())) {
+                } else if (!isMergedTable[1][c] && ((r < 1 && board.tile(c, 1) == null) || hasSameValue(t, board.tile(c, 1)) && noTilesAbove(1, r, c))) {
                     isMerged = board.move(c, 1, t);
                     changedRow = 1;
                     changed = true;
@@ -186,6 +186,27 @@ public class Model extends Observable {
 
         return changed;
     }
+
+    /**
+     *  Helper function: check whether two tiles has same value
+     */
+    public boolean hasSameValue(Tile t1, Tile t2){
+        return t1.value() == t2.value();
+    }
+
+    /**
+     *  Helper function: check no tiles above
+     */
+    public boolean noTilesAbove(int upperRow, int lowerRow,int col){
+        for (int curRow = upperRow - 1; curRow > lowerRow; curRow--){
+            if (board.tile(col, curRow) != null){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 
     /** Checks if the game is over and sets the gameOver variable
      *  appropriately.
