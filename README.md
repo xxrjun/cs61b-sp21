@@ -18,12 +18,12 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 
 ## Projects
 
-| PROJECT                                                                    |                         DEMO                         |          CODE           |   DATE   |        DONE        | AUTOGRADER SCORE |
-| -------------------------------------------------------------------------- | :--------------------------------------------------: | :---------------------: | :------: | :----------------: | :--------------: |
-| [Project 0: 2048](https://sp21.datastructur.es/materials/proj/proj0/proj0) | [video](https://www.youtube.com/watch?v=6Jsv1mstx2I) | [:link: link](./proj0/) | 22/08/01 | :white_check_mark: | **640.0/640.0**  |
-| Project 1: Data Structures                                                 |                                                      |                         |          |                    |                  |
-| Project 2: Gitlet                                                          |                                                      |                         |          |                    |                  |
-| Project 3: Game Sharing                                                    |                                                      |                         |          |                    |                  |
+| PROJECT                                                                    |                         DEMO                         |          CODE           |   DATE   |        DONE        | AUTOGRADER SCORE  |
+| -------------------------------------------------------------------------- | :--------------------------------------------------: | :---------------------: | :------: | :----------------: | :---------------: |
+| [Project 0: 2048](https://sp21.datastructur.es/materials/proj/proj0/proj0) | [video](https://www.youtube.com/watch?v=6Jsv1mstx2I) | [:link: link](./proj0/) | 22/08/01 | :white_check_mark: | **640.0 / 640.0** |
+| Project 1: Data Structures                                                 |                                                      |                         |          |                    |                   |
+| Project 2: Gitlet                                                          |                                                      |                         |          |                    |                   |
+| Project 3: Game Sharing                                                    |                                                      |                         |          |                    |                   |
 
 ## Labs
 
