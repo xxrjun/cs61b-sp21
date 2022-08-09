@@ -2,7 +2,7 @@
 
 Start this course from 2022/08/01.
 
-Thanks for Josh Hug!
+Thanks for Josh Hug and TAs!
 
 ## Getting Started
 
@@ -29,8 +29,8 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 
 | LAB                                                                                                         |      CODE       |   DATE   |        DONE        | AUTOGRADER SCORE |
 | ----------------------------------------------------------------------------------------------------------- | :-------------: | :------: | :----------------: | :--------------: |
-| [Lab 1: IntelliJ, Java, git](https://sp21.datastructur.es/materials/lab/lab1/lab1)                          | [link](./lab1/) | 22/08/09 | :white_check_mark: |   32.0 / 32.0    |
-| [Lab 2: JUnit Tests and Debugging](https://sp21.datastructur.es/materials/lab/lab2/lab2)                    | [link](./lab2/) | 22/08/09 | :white_check_mark: |   64.0 / 64.0    |
+| [Lab 1: IntelliJ, Java, git](https://sp21.datastructur.es/materials/lab/lab1/lab1)                          | [link](./lab1/) | 22/08/09 | :white_check_mark: | **32.0 / 32.0**  |
+| [Lab 2: JUnit Tests and Debugging](https://sp21.datastructur.es/materials/lab/lab2/lab2)                    | [link](./lab2/) | 22/08/09 | :white_check_mark: | **64.0 / 64.0**  |
 | [Lab 3: Timing Tests and Randomized Comparison Tests](https://sp21.datastructur.es/materials/lab/lab3/lab3) |                 |          |                    |                  |
 | [Lab 4: Git and Debugging](https://sp21.datastructur.es/materials/lab/lab4/lab4)                            |                 |          |                    |                  |
 | [Lab 5: Project 1 Peer Code Review](https://sp21.datastructur.es/materials/lab/lab5/lab5)                   |                 |          |                    |                  |
