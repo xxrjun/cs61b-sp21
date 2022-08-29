@@ -24,19 +24,42 @@ public class ArrayDeque<T> {
         items = newArrayDeque;
     }
 
+    /**
+     * Add item to the first position of array deque.
+     *
+     * @param item
+     */
     public void addFirst(T item) {
-        
+        if (size() == items.length) {
+            resize(size() * 2);
+        }
+
+        for (int i = size(); i > 0; i--) {
+            items[i] = items[i - 1];
+        }
+        items[0] = item;
+        size += 1;
     }
 
+    /**
+     * Add item to the last position of array deque.
+     *
+     * @param item
+     */
     public void addLast(T item) {
+        if (size() == items.length) {
+            resize(size() * 2);
+        }
 
+        items[size] = item;
+        size += 1;
     }
 
     /**
      * @return whether the array deque is empty (size == 0)
      */
     public boolean isEmpty() {
-        return this.size() == 0;
+        return size() == 0;
     }
 
     /**
@@ -46,6 +69,9 @@ public class ArrayDeque<T> {
         return size;
     }
 
+    /**
+     * Print whole deque.
+     */
     public void printDeque() {
         if (!this.isEmpty()) {
             for (int i = 0; i < size - 1; i++) {
@@ -69,6 +95,12 @@ public class ArrayDeque<T> {
             }
 
             size -= 1;
+
+            // If Ratio Usage < 0.25, half array deque length.
+            if (size() < (items.length / 4)) {
+                resize(size() / 2);
+            }
+
             return firstItem;
         }
 
@@ -86,8 +118,14 @@ public class ArrayDeque<T> {
             T lastItem = items[size - 1];
             size -= 1;
 
+            // If Ratio Usage < 0.25, half array deque length.
+            if (size() < (items.length / 4)) {
+                resize(size() / 2);
+            }
+
             return lastItem;
         }
+
 
         return null;
     }
