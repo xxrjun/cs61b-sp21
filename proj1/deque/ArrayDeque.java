@@ -98,7 +98,7 @@ public class ArrayDeque<T> {
 
             // If Ratio Usage < 0.25, half array deque length.
             if (size() < (items.length / 4)) {
-                resize(size() / 2);
+                resize(items.length / 2);
             }
 
             return firstItem;
@@ -120,7 +120,7 @@ public class ArrayDeque<T> {
 
             // If Ratio Usage < 0.25, half array deque length.
             if (size() < (items.length / 4)) {
-                resize(size() / 2);
+                resize(items.length / 2);
             }
 
             return lastItem;
