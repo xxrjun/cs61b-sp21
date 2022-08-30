@@ -23,7 +23,7 @@ public class TimeSLList {
 
     public static void timeGetLast() {
         // TODO: YOUR CODE HERE
-        int[] NsArray = new int[]{1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000};
+        int[] NsArray = new int[]{1, 2, 4, 8, 16, 32};
         AList<Integer> Ns = new AList<>();
         AList<Double> times = new AList<>();
         AList<Integer> opCounts = new AList<>();
@@ -44,6 +44,7 @@ public class TimeSLList {
 
             // 5.Check the timer. This gives the total time to complete all M operations.
             double timeInSeconds = sw.elapsedTime();
+
 
             Ns.addLast(n);
             times.addLast(timeInSeconds);
