@@ -1,6 +1,6 @@
 package deque;
 
-public class ArrayDeque<T> {
+public class ArrayDeque<T> implements Deque<T>{
 
     private T items[];
     private int size;
@@ -29,6 +29,7 @@ public class ArrayDeque<T> {
      *
      * @param item
      */
+    @Override
     public void addFirst(T item) {
         if (size() == items.length) {
             resize(size() * 2);
@@ -46,6 +47,7 @@ public class ArrayDeque<T> {
      *
      * @param item
      */
+    @Override
     public void addLast(T item) {
         if (size() == items.length) {
             resize(size() * 2);
@@ -58,6 +60,7 @@ public class ArrayDeque<T> {
     /**
      * @return whether the array deque is empty (size == 0)
      */
+    @Override
     public boolean isEmpty() {
         return size() == 0;
     }
@@ -65,20 +68,9 @@ public class ArrayDeque<T> {
     /**
      * @return size: the length of items in array deque
      */
+    @Override
     public int size() {
         return size;
-    }
-
-    /**
-     * Print whole deque.
-     */
-    public void printDeque() {
-        if (!this.isEmpty()) {
-            for (int i = 0; i < size - 1; i++) {
-                System.out.print(items[i] + " ");
-            }
-            System.out.println(items[size - 1]);
-        }
     }
 
     /**
@@ -86,6 +78,7 @@ public class ArrayDeque<T> {
      *
      * @return firstItem or null
      */
+    @Override
     public T removeFirst() {
         if (!this.isEmpty()) {
             T firstItem = items[0];
@@ -112,6 +105,7 @@ public class ArrayDeque<T> {
      *
      * @return lastItem: the last item should be removed.
      */
+    @Override
     public T removeLast() {
         // Validation for empty array deque
         if (!this.isEmpty()) {
@@ -136,6 +130,7 @@ public class ArrayDeque<T> {
      * @param index
      * @return item
      */
+    @Override
     public T get(int index) {
         // Index validation
         if (index >= 0 && index < items.length) {

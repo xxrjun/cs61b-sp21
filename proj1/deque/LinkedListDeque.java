@@ -2,7 +2,7 @@ package deque;
 
 import javax.sound.sampled.Line;
 
-public class LinkedListDeque<T> {
+public class LinkedListDeque<T> implements Deque<T>{
 
     /**
      * @param <T>
@@ -34,6 +34,7 @@ public class LinkedListDeque<T> {
     /**
      * @param item: an item of type T.
      */
+    @Override
     public void addFirst(T item) {
         if(this.isEmpty()){
             LinkedNode<T> newNode = new LinkedNode<>(sentinel, item, sentinel);
@@ -53,6 +54,7 @@ public class LinkedListDeque<T> {
      *
      * @param item
      */
+    @Override
     public void addLast(T item) {
         if(this.isEmpty()){
             LinkedNode<T> newNode = new LinkedNode<>(sentinel, item, sentinel);
@@ -73,6 +75,7 @@ public class LinkedListDeque<T> {
      *
      * @return deleted_item
      */
+    @Override
     public T removeFirst(){
         if(this.isEmpty()){
             return null;
@@ -91,6 +94,7 @@ public class LinkedListDeque<T> {
         return deleted_item;
     }
 
+    @Override
     public T removeLast(){
         if(this.isEmpty()){
             return null;
@@ -110,6 +114,7 @@ public class LinkedListDeque<T> {
     /**
      * @return whether the deque is empty.
      */
+    @Override
     public boolean isEmpty() {
         return this.size() == 0;
     }
@@ -117,6 +122,7 @@ public class LinkedListDeque<T> {
     /**
      * @return size: the size fo deque.
      */
+    @Override
     public int size() {
         return size;
     }
@@ -124,6 +130,7 @@ public class LinkedListDeque<T> {
     /**
      *  Prints whole deque by iterating
      */
+    @Override
     public void printDeque() {
         if(!this.isEmpty()){
             LinkedNode<T> cur = sentinel.next;
@@ -142,6 +149,7 @@ public class LinkedListDeque<T> {
      * @param index
      * @return item
      */
+    @Override
     public T get(int index) {
         if(index >= size || this.isEmpty()) {
             return null;
