@@ -1,7 +1,6 @@
 package timingtest;
 
 import edu.princeton.cs.algs4.Stopwatch;
-import org.checkerframework.checker.units.qual.A;
 
 /**
  * Created by hug.

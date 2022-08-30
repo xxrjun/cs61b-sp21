@@ -27,19 +27,27 @@ public class TimeSLList {
         AList<Integer> Ns = new AList<>();
         AList<Double> times = new AList<>();
         AList<Integer> opCounts = new AList<>();
-        int ops = 10000;
+        int M = 10000; // M operations
 
         for(int n : NsArray){
+            // 1. Create an SLList.
             SLList<Integer> sl = new SLList<>();
+
+            // 2. Add N items to the SLList.
             doAddLastNTimes(sl, n);
 
+            // 3. Start the timer.
             Stopwatch sw = new Stopwatch();
-            doGetLastNTimes(sl, ops);
+
+            // 4. Perform M getLast operations on the SLList.
+            doGetLastNTimes(sl, M);
+
+            // 5.Check the timer. This gives the total time to complete all M operations.
             double timeInSeconds = sw.elapsedTime();
 
             Ns.addLast(n);
             times.addLast(timeInSeconds);
-            opCounts.addLast(ops);
+            opCounts.addLast(M);
         }
 
         printTimingTable(Ns, times,opCounts);
