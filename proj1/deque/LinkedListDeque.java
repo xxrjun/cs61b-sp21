@@ -164,5 +164,23 @@ public class LinkedListDeque<T> implements Deque<T>{
         }
     }
 
+    public T getRecursive(int index){
+        if(isEmpty()){
+            return null;
+        }
 
+        LinkedNode<T> head = sentinel.next;
+
+        T item = getRecursive(head, index).item;
+
+        return item;
+    }
+
+    private LinkedNode<T> getRecursive(LinkedNode<T> cur, int index){
+        if(index == 0){
+            return cur;
+        } else {
+            return getRecursive(cur.next, index - 1);
+        }
+    }
 }

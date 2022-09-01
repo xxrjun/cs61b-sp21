@@ -135,4 +135,18 @@ public class LinkedListDequeTest {
         }
 
     }
+
+    @Test
+    public void getTest(){
+        LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
+        lld1.addLast(10);
+        lld1.addLast(8);
+        lld1.addLast(20);
+        lld1.addLast(15);
+        lld1.addLast(7);
+
+
+        assertEquals(15, (int) (lld1.getRecursive(3)));
+        assertEquals(15, (int) (lld1.get(3)));
+    }
 }
