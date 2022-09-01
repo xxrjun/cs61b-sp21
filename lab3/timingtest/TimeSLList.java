@@ -23,7 +23,7 @@ public class TimeSLList {
 
     public static void timeGetLast() {
         // TODO: YOUR CODE HERE
-        int[] NsArray = new int[]{1000, 2, 4, 8, 16, 32};
+        int[] NsArray = new int[]{1, 2, 4, 8, 16, 32};
         AList<Integer> Ns = new AList<>();
         AList<Double> times = new AList<>();
         AList<Integer> opCounts = new AList<>();
