@@ -25,7 +25,7 @@ public class GuitarHero {
                 char key = StdDraw.nextKeyTyped();
                 int keyIdx = keyboard.indexOf(key);
 
-                if(keyIdx >= 0){
+                if (keyIdx >= 0) {
                     strings[keyIdx].pluck();
                 }
 
@@ -33,7 +33,7 @@ public class GuitarHero {
 
             /* compute the superposition of samples */
             double sample = 0.0;
-            for(GuitarString string : strings){
+            for (GuitarString string : strings) {
                 sample += string.sample();
             }
 
@@ -41,7 +41,7 @@ public class GuitarHero {
             StdAudio.play(sample);
 
             /* advance the simulation of each guitar string by one step */
-            for(GuitarString string : strings){
+            for (GuitarString string : strings) {
                 string.tic();
             }
         }

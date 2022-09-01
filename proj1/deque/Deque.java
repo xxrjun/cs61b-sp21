@@ -23,8 +23,6 @@ public interface Deque<T> {
         return this.size() == 0;
     }
 
-    ;
-
     /**
      * @return size: the length of items in array deque
      */

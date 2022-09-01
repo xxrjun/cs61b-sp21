@@ -83,12 +83,12 @@ public class LinkedListDeque<T> implements Deque<T> {
         curFirst.next.prev = sentinel;
 
         // Get the deleted item and null out deleted item.
-        T deleted_item = curFirst.item;
+        T deletedItem = curFirst.item;
         curFirst = null;
 
         size -= 1;
 
-        return deleted_item;
+        return deletedItem;
     }
 
     @Override
@@ -102,10 +102,10 @@ public class LinkedListDeque<T> implements Deque<T> {
         curLast.prev.next = sentinel;
 
         // Get the deleted item and null out deleted item.
-        T deleted_item = curLast.item;
+        T deletedItem = curLast.item;
         curLast = null;
 
-        return deleted_item;
+        return deletedItem;
     }
 
     /**
