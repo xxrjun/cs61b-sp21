@@ -2,7 +2,7 @@ package deque;
 
 import javax.sound.sampled.Line;
 
-public class LinkedListDeque<T> implements Deque<T>{
+public class LinkedListDeque<T> implements Deque<T> {
 
     /**
      * @param <T>
@@ -36,7 +36,7 @@ public class LinkedListDeque<T> implements Deque<T>{
      */
     @Override
     public void addFirst(T item) {
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             LinkedNode<T> newNode = new LinkedNode<>(sentinel, item, sentinel);
             sentinel.next = newNode;
             sentinel.prev = newNode;
@@ -51,12 +51,11 @@ public class LinkedListDeque<T> implements Deque<T>{
     }
 
     /**
-     *
      * @param item
      */
     @Override
     public void addLast(T item) {
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             LinkedNode<T> newNode = new LinkedNode<>(sentinel, item, sentinel);
             sentinel.next = newNode;
             sentinel.prev = newNode;
@@ -71,13 +70,13 @@ public class LinkedListDeque<T> implements Deque<T>{
     }
 
     /**
-     *  Remove first node of deque
+     * Remove first node of deque
      *
      * @return deleted_item
      */
     @Override
-    public T removeFirst(){
-        if(this.isEmpty()){
+    public T removeFirst() {
+        if (this.isEmpty()) {
             return null;
         }
 
@@ -95,8 +94,8 @@ public class LinkedListDeque<T> implements Deque<T>{
     }
 
     @Override
-    public T removeLast(){
-        if(this.isEmpty()){
+    public T removeLast() {
+        if (this.isEmpty()) {
             return null;
         }
 
@@ -112,14 +111,6 @@ public class LinkedListDeque<T> implements Deque<T>{
     }
 
     /**
-     * @return whether the deque is empty.
-     */
-    @Override
-    public boolean isEmpty() {
-        return this.size() == 0;
-    }
-
-    /**
      * @return size: the size fo deque.
      */
     @Override
@@ -128,14 +119,14 @@ public class LinkedListDeque<T> implements Deque<T>{
     }
 
     /**
-     *  Prints whole deque by iterating
+     * Prints whole deque by iterating
      */
     @Override
     public void printDeque() {
-        if(!this.isEmpty()){
+        if (!this.isEmpty()) {
             LinkedNode<T> cur = sentinel.next;
 
-            for(int i = 0 ; i < size - 1; i++){
+            for (int i = 0; i < size - 1; i++) {
                 System.out.print(cur.item + " ");
                 cur = cur.next;
             }
@@ -151,12 +142,12 @@ public class LinkedListDeque<T> implements Deque<T>{
      */
     @Override
     public T get(int index) {
-        if(index >= size || this.isEmpty()) {
+        if (index >= size || this.isEmpty()) {
             return null;
         } else {
             LinkedNode<T> cur = sentinel.next;
 
-            for(int i = 0; i < index; i++){
+            for (int i = 0; i < index; i++) {
                 cur = cur.next;
             }
 
@@ -164,8 +155,8 @@ public class LinkedListDeque<T> implements Deque<T>{
         }
     }
 
-    public T getRecursive(int index){
-        if(isEmpty()){
+    public T getRecursive(int index) {
+        if (isEmpty()) {
             return null;
         }
 
@@ -176,8 +167,8 @@ public class LinkedListDeque<T> implements Deque<T>{
         return item;
     }
 
-    private LinkedNode<T> getRecursive(LinkedNode<T> cur, int index){
-        if(index == 0){
+    private LinkedNode<T> getRecursive(LinkedNode<T> cur, int index) {
+        if (index == 0) {
             return cur;
         } else {
             return getRecursive(cur.next, index - 1);

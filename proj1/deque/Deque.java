@@ -19,7 +19,9 @@ public interface Deque<T> {
     /**
      * @return whether the array deque is empty (size == 0)
      */
-    public boolean isEmpty();
+    default boolean isEmpty(){
+        return this.size() == 0;
+    };
 
     /**
      * @return size: the length of items in array deque
