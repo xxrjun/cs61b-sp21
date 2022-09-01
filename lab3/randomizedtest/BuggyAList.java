@@ -52,7 +52,11 @@ public class BuggyAList<Item> {
      * Returns the item from the back of the list.
      */
     public Item getLast() {
-        return items[size - 1];
+        if (!isEmpty()) {
+            return items[size - 1];
+        }
+
+        return null;
     }
 
     /**
@@ -70,10 +74,9 @@ public class BuggyAList<Item> {
     }
 
     /**
-     *
      * @return whether the AList is empty.
      */
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size() == 0;
     }
 
@@ -82,7 +85,7 @@ public class BuggyAList<Item> {
      * returns deleted item.
      */
     public Item removeLast() {
-        if(!isEmpty()){
+        if (!isEmpty()) {
             Item x = getLast();
             items[size - 1] = null; // not necessary
             size = size - 1;
