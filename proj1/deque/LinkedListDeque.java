@@ -1,18 +1,16 @@
 package deque;
 
-import javax.sound.sampled.Line;
-
 public class LinkedListDeque<T> implements Deque<T> {
 
     /**
      * @param <T>
      */
     private static class LinkedNode<T> {
-        public LinkedNode prev;
-        public T item;
-        public LinkedNode next;
+        private LinkedNode prev;
+        private T item;
+        private LinkedNode next;
 
-        public LinkedNode(LinkedNode prev, T item, LinkedNode next) {
+        LinkedNode(LinkedNode prev, T item, LinkedNode next) {
             this.prev = prev;
             this.item = item;
             this.next = next;

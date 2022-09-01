@@ -7,26 +7,28 @@ public interface Deque<T> {
      *
      * @param item
      */
-    public void addFirst(T item);
+    void addFirst(T item);
 
     /**
      * Add item to the last position of array deque.
      *
      * @param item
      */
-    public void addLast(T item);
+    void addLast(T item);
 
     /**
      * @return whether the array deque is empty (size == 0)
      */
-    default boolean isEmpty(){
+    default boolean isEmpty() {
         return this.size() == 0;
-    };
+    }
+
+    ;
 
     /**
      * @return size: the length of items in array deque
      */
-    public int size();
+    int size();
 
 
     /**
@@ -34,14 +36,14 @@ public interface Deque<T> {
      *
      * @return firstItem or null
      */
-    public T removeFirst();
+    T removeFirst();
 
     /**
      * Remove the last item of array deque.
      *
      * @return lastItem: the last item should be removed.
      */
-    public T removeLast();
+    T removeLast();
 
     /**
      * Get the item by index.
@@ -49,7 +51,7 @@ public interface Deque<T> {
      * @param index
      * @return item
      */
-    public T get(int index);
+    T get(int index);
 
     /**
      * Print whole deque.

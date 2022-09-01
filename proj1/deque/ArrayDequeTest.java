@@ -2,13 +2,14 @@ package deque;
 
 import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 
 public class ArrayDequeTest {
 
     @Test
-    public void removeEmptyTest(){
+    public void removeEmptyTest() {
         ArrayDeque<Integer> ad1 = new ArrayDeque<>();
         ad1.addFirst(3);
 
@@ -44,7 +45,7 @@ public class ArrayDequeTest {
     }
 
     @Test
-    public void randomizedTest(){
+    public void randomizedTest() {
         ArrayDeque<Integer> correct = new ArrayDeque<>();
         ArrayDeque<Integer> broken = new ArrayDeque<>();
 

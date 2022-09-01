@@ -31,7 +31,7 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
 
         int maxValueIndex = 0;
         for (int i = 1; i < size(); i++) {
-            if(c.compare(get(maxValueIndex), get(i)) < 0){
+            if (c.compare(get(maxValueIndex), get(i)) < 0) {
                 maxValueIndex = i;
             }
         }
@@ -50,7 +50,7 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
         return new IntComparator();
     }
 
-    private static class StringComparator implements Comparator<String>{
+    private static class StringComparator implements Comparator<String> {
 
         @Override
         public int compare(String o1, String o2) {
@@ -58,22 +58,20 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
         }
     }
 
-    public static Comparator<String> getStringComparator(){
+    public static Comparator<String> getStringComparator() {
         return new StringComparator();
     }
 
-    private static class StringLengthComparator implements Comparator<String>{
+    private static class StringLengthComparator implements Comparator<String> {
         @Override
         public int compare(String o1, String o2) {
             return o1.length() - o2.length();
         }
     }
 
-    public static Comparator<String> getStringLengthComparator(){
+    public static Comparator<String> getStringLengthComparator() {
         return new StringLengthComparator();
     }
-
-
 
 
 }
