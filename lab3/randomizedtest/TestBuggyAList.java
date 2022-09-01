@@ -34,7 +34,8 @@ public class TestBuggyAList {
 
     @Test
     public void randomizedTest(){
-        BuggyAList<Integer> L = new BuggyAList<>();
+        BuggyAList<Integer> correct = new BuggyAList<>();
+        BuggyAList<Integer> broken = new BuggyAList<>();
 
         int N = 5000;
         for (int i = 0; i < N; i += 1) {
@@ -42,39 +43,24 @@ public class TestBuggyAList {
             if (operationNumber == 0) {
                 // addLast
                 int randVal = StdRandom.uniform(0, 100);
-                L.addLast(randVal);
+                correct.addLast(randVal);
+                broken.addLast(randVal);
 
-                /**
-                 *  PRINT STATEMENT CODE SHOULD BE REMOVED
-                 */
-                System.out.println("addLast(" + randVal + ")");
+                assertEquals(correct.getLast(), broken.getLast());
             } else if (operationNumber == 1) {
                 // size
-                int size = L.size();
-
-                /**
-                 *  PRINT STATEMENT CODE SHOULD BE REMOVED
-                 */
-                System.out.println("size: " + size);
+                assertEquals(correct.size(), broken.size());
             } else if (operationNumber == 2) {
                 // getLast
-
-                /**
-                 *  PRINT STATEMENT CODE SHOULD BE REMOVED
-                 */
-                if(L.size() > 0) {
-                    System.out.println("getLast(): " + L.getLast());
-                }
+                assertEquals(correct.getLast(), broken.getLast());
                 
             } else if (operationNumber == 3) {
                 // removeLast
-
-                /**
-                 *  PRINT STATEMENT CODE SHOULD BE REMOVED
-                 */
-                if(L.size() > 0){
-                    System.out.println("removeLast(): " + L.removeLast());
-                }
+                assertEquals(correct.removeLast(), broken.removeLast());
+            } else if (correct.size() == 0) {
+                // isEmpty
+                assertTrue(correct.isEmpty());
+                assertTrue(broken.isEmpty());
             }
         }
     }
