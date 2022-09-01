@@ -1,5 +1,6 @@
 package deque;
 
+import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -148,5 +149,38 @@ public class LinkedListDequeTest {
 
         assertEquals(15, (int) (lld1.getRecursive(3)));
         assertEquals(15, (int) (lld1.get(3)));
+    }
+
+    @Test
+    public void randomizedTest(){
+        LinkedListDeque<Integer> correct = new LinkedListDeque<Integer>();
+        LinkedListDeque<Integer> broken = new LinkedListDeque<Integer>();
+
+
+        int N = 5000;
+        for (int i = 0; i < N; i += 1) {
+            int operationNumber = StdRandom.uniform(0, 4);
+            if (operationNumber == 0) {
+                // addLast
+                int randVal = StdRandom.uniform(0, 100);
+                correct.addLast(randVal);
+                broken.addLast(randVal);
+
+                assertEquals(correct.get(broken.size() - 1), broken.get(broken.size() - 1));
+            } else if (operationNumber == 1) {
+                // size
+                assertEquals(correct.size(), broken.size());
+            } else if (operationNumber == 2) {
+                // getLast
+                assertEquals(correct.get(broken.size() - 1), broken.get(broken.size() - 1));
+            } else if (operationNumber == 3) {
+                // removeLast
+                assertEquals(correct.removeLast(), broken.removeLast());
+            } else if (correct.size() == 0) {
+                // isEmpty
+                assertTrue(correct.isEmpty());
+                assertTrue(broken.isEmpty());
+            }
+        }
     }
 }
