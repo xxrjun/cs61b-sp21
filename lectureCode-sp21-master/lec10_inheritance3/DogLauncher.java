@@ -8,6 +8,14 @@ public class DogLauncher {
         Dog[] dogs = new Dog[]{d1, d2, d3};
 
         Dog d = (Dog) Maximizer.max(dogs);
-        System.out.println(d.name);
+        System.out.println("Max dog by natural order(size): " + d.name);
+
+
+        Comparator<Dog> nc = Dog.getNameComparator();
+        if (nc.compare(dogs[0], dogs[1]) > 0){
+            dogs[0].bark();
+        } else {
+            dogs[1].bark();
+        }
     }
 }
