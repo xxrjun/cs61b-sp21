@@ -19,9 +19,7 @@ public interface Deque<T> {
     /**
      * @return whether the array deque is empty (size == 0)
      */
-    default boolean isEmpty() {
-        return this.size() == 0;
-    }
+    boolean isEmpty();
 
     /**
      * @return size: the length of items in array deque
@@ -54,12 +52,5 @@ public interface Deque<T> {
     /**
      * Print whole deque.
      */
-    default void printDeque() {
-        if (!this.isEmpty()) {
-            for (int i = 0; i < size() - 1; i++) {
-                System.out.print(get(i) + " ");
-            }
-            System.out.println(get(size() - 1));
-        }
-    }
+    void printDeque();
 }
