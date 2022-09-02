@@ -4,9 +4,6 @@ import deque.ArrayDeque;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
-
 public class TimeADeque {
     private static void printTimingTable(AList<Integer> Ns, AList<Double> times, AList<Integer> opCounts) {
         System.out.printf("%12s %12s %12s %12s\n", "N", "time (s)", "# ops", "microsec/op");
