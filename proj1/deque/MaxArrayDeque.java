@@ -38,40 +38,4 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
 
         return get(maxValueIndex);
     }
-
-    private static class IntComparator implements Comparator<Integer> {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o1 - o2;
-        }
-    }
-
-    public static Comparator<Integer> getIntComparator() {
-        return new IntComparator();
-    }
-
-    private static class StringComparator implements Comparator<String> {
-
-        @Override
-        public int compare(String o1, String o2) {
-            return o1.compareTo(o2);
-        }
-    }
-
-    public static Comparator<String> getStringComparator() {
-        return new StringComparator();
-    }
-
-    private static class StringLengthComparator implements Comparator<String> {
-        @Override
-        public int compare(String o1, String o2) {
-            return o1.length() - o2.length();
-        }
-    }
-
-    public static Comparator<String> getStringLengthComparator() {
-        return new StringLengthComparator();
-    }
-
-
 }
