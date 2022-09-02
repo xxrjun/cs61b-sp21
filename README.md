@@ -55,7 +55,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | HW2: Conceptual Review               |                    |                   |
 | Project 0: 2048                      | :white_check_mark: | **640.0 / 640.0** |
 | Project 1: Checkpoint                | :white_check_mark: |  **16.0 / 16.0**  |
-| Project 1: Data Structures           | :white_check_mark  | **640.0 / 640.0** |
+| Project 1: Data Structures           | :white_check_mark: | **640.0 / 640.0** |
 | Project 1: Data Structures EC        |                    |                   |
 | Project 2: Gitlet (Checkpoint)       |                    |                   |
 | Project 2: Gitlet                    |                    |                   |
