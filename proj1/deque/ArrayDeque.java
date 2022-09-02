@@ -1,5 +1,7 @@
 package deque;
 
+import java.util.Iterator;
+
 public class ArrayDeque<T> implements Deque<T> {
 
     private T[] items;
@@ -130,5 +132,66 @@ public class ArrayDeque<T> implements Deque<T> {
         } else {
             return null;
         }
+    }
+
+    /**
+     * @return iterator
+     */
+    public Iterator<T> iterator() {
+        return new ArrayDequeIterator();
+    }
+
+    private class ArrayDequeIterator implements Iterator<T> {
+        private int seer;
+
+        public ArrayDequeIterator() {
+            seer = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return seer < size();
+        }
+
+        @Override
+        public T next() {
+            return get(seer++);
+        }
+    }
+
+    /**
+     * @param o
+     * @return whether two objects equal
+     */
+    public boolean equals(Object o) {
+        /* Same object */
+        if (this == o) {
+            return true;
+        }
+
+        /* this cannot be null*/
+        if (o == null) {
+            return false;
+        }
+
+        /* Two objects must be the same type if they equal. */
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+
+        ArrayDeque<T> other = (ArrayDeque<T>) o;
+        /* Two objects must have same size if they equal. */
+        if (this.size() != other.size()) {
+            return false;
+        }
+
+        /* Compare items in two objects. */
+        for (int i = 0; i < this.size(); i++) {
+            if (this.get(i) != other.get(i)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
