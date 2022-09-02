@@ -70,12 +70,13 @@ public class LinkedListDequeTest {
         lld.addLast(15);
         lld.addLast(25);
 
-        ArrayDeque<Integer> ad = new ArrayDeque<>();
+        Deque<Integer> ad = new ArrayDeque<>();
         ad.addLast(10);
         ad.addLast(15);
         ad.addLast(25);
 
         assertTrue(lld.equals(ad));
+        assertTrue(ad.equals(lld));
     }
 
     @Test
