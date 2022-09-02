@@ -25,12 +25,12 @@ public class TimeADeque {
     }
 
     public static void timeAListConstruction() {
-        int[] NsArray = new int[]{1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000};
+        int[] NsArray = new int[]{1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000, 256000};
         AList<Integer> Ns = new AList<>();
         AList<Double> times = new AList<>();
         AList<Integer> opCounts = new AList<>();
 
-        for(int n : NsArray){
+        for (int n : NsArray) {
             ArrayDeque<Integer> ad = new ArrayDeque<>();
 
             Stopwatch sw = new Stopwatch();
@@ -42,22 +42,24 @@ public class TimeADeque {
             opCounts.addLast(n);
         }
 
-        printTimingTable(Ns, times,opCounts);
+        printTimingTable(Ns, times, opCounts);
     }
 
     private static void randomized(ArrayDeque<Integer> ad, int n) {
         for (int i = 0; i < n; i += 1) {
             int operationNumber = StdRandom.uniform(0, 4);
             if (operationNumber == 0) {
-                // addLast
-
-            } else if (operationNumber == 1) {
                 // addFirst
-
-            }  else if (operationNumber == 2) {
+                ad.addFirst(i);
+            } else if (operationNumber == 1) {
+                // addLast
+                ad.addLast(i);
+            } else if (operationNumber == 2) {
                 // removeFirst
+                ad.removeFirst();
             } else if (operationNumber == 3) {
                 // removeLast
+                ad.removeLast();
             }
         }
     }
