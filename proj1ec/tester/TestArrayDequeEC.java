@@ -14,7 +14,7 @@ public class TestArrayDequeEC {
         StudentArrayDeque<Integer> student = new StudentArrayDeque<>();
         String msg = "";
 
-        int N = 500;
+        int N = 5000;
         for (int i = 0; i < N; i++) {
             int operationNumber = StdRandom.uniform(0, 4);
             if (operationNumber == 0) {
@@ -37,16 +37,20 @@ public class TestArrayDequeEC {
                 assertEquals(msg, solution.get(solution.size() - 1), student.get(student.size() - 1));
             } else if (operationNumber == 2 && solution.size() > 0 && student.size() > 0) {
                 // removeFirst
+                Integer expected = solution.removeFirst();
+                Integer actual = student.removeFirst();
 
                 msg += "removeFirst()\n";
 
-                assertEquals(msg, solution.removeFirst(), student.removeFirst());
+                assertEquals(msg, expected, actual);
             } else if (operationNumber == 3 && solution.size() > 0 && student.size() > 0) {
                 // removeLast
+                Integer expected = solution.removeLast();
+                Integer actual = student.removeLast();
 
                 msg += "removeLast()\n";
 
-                assertEquals(msg, solution.removeLast(), student.removeLast());
+                assertEquals(msg, expected, actual);
             }
         }
 
