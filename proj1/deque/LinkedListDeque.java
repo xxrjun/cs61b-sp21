@@ -155,13 +155,6 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
     }
 
     /**
-     * @return whether the array deque is empty (size == 0)
-     */
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    /**
      * Print whole deque.
      */
     public void printDeque() {
@@ -205,11 +198,17 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
             return false;
         }
 
-        if (this.getClass() != o.getClass()) {
+        Deque<T> other = null;
+        if(o instanceof LinkedListDeque){
+            other = (LinkedListDeque<T>) o;
+        } else if (o instanceof ArrayDeque) {
+            other = (ArrayDeque<T>) o;
+        }
+
+        if(other == null){
             return false;
         }
 
-        LinkedListDeque<T> other = (LinkedListDeque<T>) o;
         if (this.size() != other.size()) {
             return false;
         }
