@@ -49,6 +49,7 @@ public class ArrayDequeTest {
         ad.addLast(25);
 
         assertTrue(ad.equals(lld));
+        assertTrue(lld.equals(ad));
     }
 
     @Test
