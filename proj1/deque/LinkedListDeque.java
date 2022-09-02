@@ -2,7 +2,8 @@ package deque;
 
 import java.util.Iterator;
 
-public class LinkedListDeque<T> implements Deque<T> {
+@SuppressWarnings("unchecked")
+public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
 
     /**
      * @param <T>
@@ -34,7 +35,6 @@ public class LinkedListDeque<T> implements Deque<T> {
     /**
      * @param item: an item of type T.
      */
-    @Override
     public void addFirst(T item) {
         if (this.isEmpty()) {
             LinkedNode<T> newNode = new LinkedNode<>(sentinel, item, sentinel);
@@ -53,7 +53,6 @@ public class LinkedListDeque<T> implements Deque<T> {
     /**
      * @param item
      */
-    @Override
     public void addLast(T item) {
         if (this.isEmpty()) {
             LinkedNode<T> newNode = new LinkedNode<>(sentinel, item, sentinel);
@@ -74,7 +73,6 @@ public class LinkedListDeque<T> implements Deque<T> {
      *
      * @return deleted_item
      */
-    @Override
     public T removeFirst() {
         if (this.isEmpty()) {
             return null;
@@ -93,7 +91,6 @@ public class LinkedListDeque<T> implements Deque<T> {
         return deletedItem;
     }
 
-    @Override
     public T removeLast() {
         if (this.isEmpty()) {
             return null;
@@ -113,25 +110,8 @@ public class LinkedListDeque<T> implements Deque<T> {
     /**
      * @return size: the size fo deque.
      */
-    @Override
     public int size() {
         return size;
-    }
-
-    /**
-     * Prints whole deque by iterating
-     */
-    @Override
-    public void printDeque() {
-        if (!this.isEmpty()) {
-            LinkedNode<T> cur = sentinel.next;
-
-            for (int i = 0; i < size - 1; i++) {
-                System.out.print(cur.item + " ");
-                cur = cur.next;
-            }
-            System.out.println(cur.item);
-        }
     }
 
     /**
@@ -183,7 +163,7 @@ public class LinkedListDeque<T> implements Deque<T> {
     private class LinkedListDequeIterator implements Iterator<T> {
         private int seer;
 
-        public LinkedListDequeIterator() {
+        LinkedListDequeIterator() {
             seer = 0;
         }
 

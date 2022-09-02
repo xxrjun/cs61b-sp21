@@ -2,8 +2,8 @@ package deque;
 
 import java.util.Iterator;
 
-public class ArrayDeque<T> implements Deque<T> {
-
+@SuppressWarnings("unchecked")
+public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     private T[] items;
     private int size;
 
@@ -31,7 +31,6 @@ public class ArrayDeque<T> implements Deque<T> {
      *
      * @param item
      */
-    @Override
     public void addFirst(T item) {
         if (size() == items.length) {
             resize(size() * 2);
@@ -49,7 +48,6 @@ public class ArrayDeque<T> implements Deque<T> {
      *
      * @param item
      */
-    @Override
     public void addLast(T item) {
         if (size() == items.length) {
             resize(size() * 2);
@@ -62,7 +60,6 @@ public class ArrayDeque<T> implements Deque<T> {
     /**
      * @return size: the length of items in array deque
      */
-    @Override
     public int size() {
         return size;
     }
@@ -72,7 +69,6 @@ public class ArrayDeque<T> implements Deque<T> {
      *
      * @return firstItem or null
      */
-    @Override
     public T removeFirst() {
         if (!this.isEmpty()) {
             T firstItem = items[0];
@@ -99,7 +95,6 @@ public class ArrayDeque<T> implements Deque<T> {
      *
      * @return lastItem: the last item should be removed.
      */
-    @Override
     public T removeLast() {
         // Validation for empty array deque
         if (!this.isEmpty()) {
@@ -124,7 +119,6 @@ public class ArrayDeque<T> implements Deque<T> {
      * @param index
      * @return item
      */
-    @Override
     public T get(int index) {
         // Index validation
         if (index >= 0 && index < items.length) {
@@ -144,7 +138,7 @@ public class ArrayDeque<T> implements Deque<T> {
     private class ArrayDequeIterator implements Iterator<T> {
         private int seer;
 
-        public ArrayDequeIterator() {
+        ArrayDequeIterator() {
             seer = 0;
         }
 
@@ -163,6 +157,7 @@ public class ArrayDeque<T> implements Deque<T> {
      * @param o
      * @return whether two objects equal
      */
+    @Override
     public boolean equals(Object o) {
         /* Same object */
         if (this == o) {
