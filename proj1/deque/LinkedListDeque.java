@@ -104,6 +104,8 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
         T deletedItem = curLast.item;
         curLast = null;
 
+        size -= 1;
+
         return deletedItem;
     }
 

@@ -17,7 +17,7 @@ public class LinkedListDequeTest {
         LinkedListDeque<Integer> broken = new LinkedListDeque<>();
 
 
-        int N = 5000;
+        int N = 10000;
         for (int i = 0; i < N; i += 1) {
             int operationNumber = StdRandom.uniform(0, 3);
             if (operationNumber == 0) {
@@ -30,7 +30,7 @@ public class LinkedListDequeTest {
             } else if (operationNumber == 1) {
                 // removeLast
                 assertEquals(correct.removeLast(), broken.removeLast());
-            } else if (operationNumber == 3) {
+            } else if (operationNumber == 2) {
                 // isEmpty
                 assertEquals(correct.isEmpty(), broken.isEmpty());
             }
@@ -56,7 +56,7 @@ public class LinkedListDequeTest {
             } else if (operationNumber == 1) {
                 // removeLast
                 assertEquals(correct.removeLast(), broken.removeLast());
-            } else if (operationNumber == 3) {
+            } else if (operationNumber == 2) {
                 // isEmpty
                 assertEquals(correct.isEmpty(), broken.isEmpty());
             }
