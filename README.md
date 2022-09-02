@@ -21,7 +21,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | PROJECT                                                                               |                         DEMO                         |          CODE           |   DATE   |       STATUS       | AUTOGRADER SCORE  |
 | ------------------------------------------------------------------------------------- | :--------------------------------------------------: | :---------------------: | :------: | :----------------: | :---------------: |
 | [Project 0: 2048](https://sp21.datastructur.es/materials/proj/proj0/proj0)            | [video](https://www.youtube.com/watch?v=6Jsv1mstx2I) | [:link: link](./proj0/) | 22/08/01 | :white_check_mark: | **640.0 / 640.0** |
-| [Project 1: Data Structures](https://sp21.datastructur.es/materials/proj/proj1/proj1) |                                                      | [:link: link](./proj1/) |          |                    |                   |
+| [Project 1: Data Structures](https://sp21.datastructur.es/materials/proj/proj1/proj1) |                                                      | [:link: link](./proj1/) | 22/09/02 | :white_check_mark: | **640.0 / 640.0** |
 | [Project 2: Gitlet](https://sp21.datastructur.es/materials/proj/proj2/proj2)          |                                                      |                         |          |                    |                   |
 | [Project 3: Game Sharing](https://sp21.datastructur.es/materials/proj/proj3/proj3)    |                                                      |                         |          |                    |                   |
 
