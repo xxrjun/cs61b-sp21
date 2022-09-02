@@ -13,25 +13,12 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
      * Constructor
      */
     public ArrayDeque() {
-        items = (T[]) new Object[10];
+        items = (T[]) new Object[8];
         nextFirst = 3;
         nextLast = 4;
         size = 0;
     }
 
-    /**
-     * @return nextFirst
-     */
-    public int getNextFirst() {
-        return nextFirst;
-    }
-
-    /**
-     * @return nextLast
-     */
-    public int getNextLast() {
-        return nextLast;
-    }
 
     /**
      * Private helper function: used to resize the array deque.
@@ -49,14 +36,14 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     }
 
 
-    private void resizeDealer() {
+    private void usageDealer() {
         if (nextFirst == -1) {
             // reach front, resize array deque length to 2x
             resize(items.length * 2);
         } else if (nextLast == items.length) {
             // reach end, resize array deque length to 2x
             resize(items.length * 2);
-        } else if (size() > 10 && size() < (items.length / 4)) {
+        } else if (size() > 8 && size() < (items.length / 4)) {
             // If Ratio Usage < 0.25 and size is larger than 10, half array deque length.
             resize(items.length / 2);
         }
@@ -74,7 +61,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         size += 1;
         nextFirst -= 1;
 
-        resizeDealer();
+        usageDealer();
     }
 
     /**
@@ -88,7 +75,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         size += 1;
         nextLast += 1;
 
-        resizeDealer();
+        usageDealer();
 
     }
 
@@ -112,7 +99,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             size -= 1;
             nextFirst += 1;
 
-            resizeDealer();
+            usageDealer();
 
             return firstItem;
         }
@@ -133,7 +120,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             size -= 1;
             nextLast -= 1;
 
-            resizeDealer();
+            usageDealer();
 
             return lastItem;
         }
@@ -150,8 +137,8 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
      */
     public T get(int index) {
         // Index validation
-        if (index > nextFirst && index < nextLast) {
-            return items[index];
+        if (index >= 0 && index < items.length) {
+            return items[index + nextFirst + 1];
         } else {
             return null;
         }
@@ -223,18 +210,10 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             return false;
         }
 
-        if (o instanceof LinkedListDeque) {
-            for (int i = nextFirst + 1, j = 0; i < nextLast && j < other.size(); i++, j++) {
-                if (!(this.get(i) == other.get(j))) {
-                    return false;
-                }
-            }
 
-        } else if (o instanceof ArrayDeque) {
-            for (int i = 0; i < size(); i++) {
-                if (!(this.get(i) == other.get(i))) {
-                    return false;
-                }
+        for (int i = 0; i < size(); i++) {
+            if (!(this.get(i).equals(other.get(i)))) {
+                return false;
             }
         }
 
