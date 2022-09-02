@@ -2,7 +2,7 @@ package deque;
 
 import java.util.Iterator;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
 
     /**
@@ -120,7 +120,6 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
      * @param index
      * @return item
      */
-    @Override
     public T get(int index) {
         if (index >= size || this.isEmpty()) {
             return null;
@@ -152,6 +151,25 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
             return cur;
         } else {
             return getRecursive(cur.next, index - 1);
+        }
+    }
+
+    /**
+     * @return whether the array deque is empty (size == 0)
+     */
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    /**
+     * Print whole deque.
+     */
+    public void printDeque() {
+        if (!this.isEmpty()) {
+            for (int i = 0; i < size() - 1; i++) {
+                System.out.print(get(i) + " ");
+            }
+            System.out.println(get(size() - 1));
         }
     }
 
