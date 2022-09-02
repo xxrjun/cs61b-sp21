@@ -9,6 +9,22 @@ import static org.junit.Assert.*;
 public class ArrayDequeTest {
 
     @Test
+    public void equalsTest(){
+        ArrayDeque<Integer> ad1 = new ArrayDeque<>();
+        ad1.addLast(10);
+        ad1.addLast(15);
+        ad1.addLast(25);
+
+        ArrayDeque<Integer> ad2 = new ArrayDeque<>();
+        ad2.addLast(10);
+        ad2.addLast(15);
+        ad2.addLast(25);
+
+        assertTrue(ad1.equals(ad2));
+
+    }
+
+    @Test
     public void removeEmptyTest() {
         ArrayDeque<Integer> ad1 = new ArrayDeque<>();
         ad1.addFirst(3);
