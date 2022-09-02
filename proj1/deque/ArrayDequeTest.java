@@ -38,18 +38,32 @@ public class ArrayDequeTest {
 
     @Test
     public void differentDequeTypeEqualsTest() {
-        Deque<Integer> lld = new LinkedListDeque<>();
+        LinkedListDeque<Integer> lld = new LinkedListDeque<>();
         lld.addLast(10);
         lld.addLast(15);
         lld.addLast(25);
 
-        Deque<Integer> ad = new ArrayDeque<>();
+        ArrayDeque<Integer> ad = new ArrayDeque<>();
         ad.addLast(10);
         ad.addLast(15);
         ad.addLast(25);
 
         assertTrue(ad.equals(lld));
         assertTrue(lld.equals(ad));
+
+
+        LinkedListDeque<String> lld2 = new LinkedListDeque<>();
+        lld2.addLast("a");
+        lld2.addLast("b");
+        lld2.addLast("c");
+
+        ArrayDeque<String> ad2 = new ArrayDeque<>();
+        ad2.addLast("a");
+        ad2.addLast("b");
+        ad2.addLast("c");
+
+        assertTrue(ad2.equals(lld2));
+        assertTrue(lld2.equals(ad2));
     }
 
     @Test
