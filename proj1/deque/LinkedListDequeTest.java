@@ -12,6 +12,58 @@ import static org.junit.Assert.*;
 public class LinkedListDequeTest {
 
     @Test
+    public void addFirstRemoveLastIsEmptyTest() {
+        LinkedListDeque<Integer> correct = new LinkedListDeque<>();
+        LinkedListDeque<Integer> broken = new LinkedListDeque<>();
+
+
+        int N = 5000;
+        for (int i = 0; i < N; i += 1) {
+            int operationNumber = StdRandom.uniform(0, 3);
+            if (operationNumber == 0) {
+                // addFirst
+                int randVal = StdRandom.uniform(0, 100);
+                correct.addFirst(randVal);
+                broken.addFirst(randVal);
+
+                assertEquals(correct.get(0), broken.get(0));
+            } else if (operationNumber == 1) {
+                // removeLast
+                assertEquals(correct.removeLast(), broken.removeLast());
+            } else if (operationNumber == 3) {
+                // isEmpty
+                assertEquals(correct.isEmpty(), broken.isEmpty());
+            }
+        }
+    }
+
+    @Test
+    public void addLastRemoveLastIsEmptyTest() {
+        LinkedListDeque<Integer> correct = new LinkedListDeque<>();
+        LinkedListDeque<Integer> broken = new LinkedListDeque<>();
+
+
+        int N = 5000;
+        for (int i = 0; i < N; i += 1) {
+            int operationNumber = StdRandom.uniform(0, 3);
+            if (operationNumber == 0) {
+                // addLast
+                int randVal = StdRandom.uniform(0, 100);
+                correct.addLast(randVal);
+                broken.addLast(randVal);
+
+                assertEquals(correct.get(correct.size() - 1), broken.get(broken.size() - 1));
+            } else if (operationNumber == 1) {
+                // removeLast
+                assertEquals(correct.removeLast(), broken.removeLast());
+            } else if (operationNumber == 3) {
+                // isEmpty
+                assertEquals(correct.isEmpty(), broken.isEmpty());
+            }
+        }
+    }
+
+    @Test
     public void differentDequeTypeEqualsTest() {
         LinkedListDeque<Integer> lld = new LinkedListDeque<>();
         lld.addLast(10);
@@ -229,8 +281,6 @@ public class LinkedListDequeTest {
                     assertFalse(broken.isEmpty());
                 }
             }
-
-
         }
     }
 }

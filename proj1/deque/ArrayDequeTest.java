@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 
 public class ArrayDequeTest {
+
     @Test
     public void differentDequeTypeEqualsTest() {
         LinkedListDeque<Integer> lld = new LinkedListDeque<>();
