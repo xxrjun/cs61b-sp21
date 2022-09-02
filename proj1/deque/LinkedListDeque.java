@@ -215,9 +215,20 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
             return false;
         }
 
-        for (int i = 0; i < size(); i++) {
-            if (!this.get(i).equals(other.get(i))) {
-                return false;
+        if (other instanceof LinkedListDeque) {
+            for (int i = 0; i < size(); i++) {
+                if (!(this.get(i) == other.get(i))) {
+                    return false;
+                }
+            }
+        } else if (other instanceof ArrayDeque) {
+            int nextFirst = ((ArrayDeque<T>) other).getNextFirst();
+            int nextLast = ((ArrayDeque<T>) other).getNextLast();
+
+            for (int i = 0, j = nextFirst + 1; i < this.size() && j < nextLast; i++, j++) {
+                if (!(this.get(i) == other.get(j))) {
+                    return false;
+                }
             }
         }
 
