@@ -5,14 +5,26 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
 public class ArrayDequeTest {
 
     @Test
-    public void differentDequeTypeEqualsTest() {
-        LinkedListDeque<Integer> lld = new LinkedListDeque<>();
+    public void resizeTest() {
+        Deque<Integer> ad = new ArrayDeque<>();
+
+        for (int i = 0; i < 100; i++) {
+            ad.addLast(i);
+        }
+
+        for (double i = 0; i < 50; i++) {
+            assertEquals("Should have the same value", i, (double) ad.removeFirst(), 0.0);
+        }
+    }
+
+    @Test
+    public void differentDequeTypeNotEqualsTest() {
+        Deque<Integer> lld = new LinkedListDeque<>();
         lld.addLast(10);
-        lld.addLast(15);
+        lld.addLast(20);
         lld.addLast(25);
 
         ArrayDeque<Integer> ad = new ArrayDeque<>();
@@ -20,7 +32,23 @@ public class ArrayDequeTest {
         ad.addLast(15);
         ad.addLast(25);
 
-        assertTrue(lld.equals(ad));
+        assertFalse(lld.equals(ad));
+        assertFalse(ad.equals(lld));
+    }
+
+    @Test
+    public void differentDequeTypeEqualsTest() {
+        Deque<Integer> lld = new LinkedListDeque<>();
+        lld.addLast(10);
+        lld.addLast(15);
+        lld.addLast(25);
+
+        Deque<Integer> ad = new ArrayDeque<>();
+        ad.addLast(10);
+        ad.addLast(15);
+        ad.addLast(25);
+
+        assertTrue(ad.equals(lld));
     }
 
     @Test
