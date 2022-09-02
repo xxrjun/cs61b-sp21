@@ -18,12 +18,13 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 
 ## Projects
 
-| PROJECT                                                                               |                         DEMO                         |          CODE           |   DATE   |       STATUS       | AUTOGRADER SCORE  |
-| ------------------------------------------------------------------------------------- | :--------------------------------------------------: | :---------------------: | :------: | :----------------: | :---------------: |
-| [Project 0: 2048](https://sp21.datastructur.es/materials/proj/proj0/proj0)            | [video](https://www.youtube.com/watch?v=6Jsv1mstx2I) | [:link: link](./proj0/) | 22/08/01 | :white_check_mark: | **640.0 / 640.0** |
-| [Project 1: Data Structures](https://sp21.datastructur.es/materials/proj/proj1/proj1) |                                                      | [:link: link](./proj1/) | 22/09/02 | :white_check_mark: | **640.0 / 640.0** |
-| [Project 2: Gitlet](https://sp21.datastructur.es/materials/proj/proj2/proj2)          |                                                      |                         |          |                    |                   |
-| [Project 3: Game Sharing](https://sp21.datastructur.es/materials/proj/proj3/proj3)    |                                                      |                         |          |                    |                   |
+| PROJECT                                                                                          |                         DEMO                         |           CODE            |   DATE   |       STATUS       | AUTOGRADER SCORE  |
+| ------------------------------------------------------------------------------------------------ | :--------------------------------------------------: | :-----------------------: | :------: | :----------------: | :---------------: |
+| [Project 0: 2048](https://sp21.datastructur.es/materials/proj/proj0/proj0)                       | [video](https://www.youtube.com/watch?v=6Jsv1mstx2I) |  [:link: link](./proj0/)  | 22/08/01 | :white_check_mark: | **640.0 / 640.0** |
+| [Project 1: Data Structures](https://sp21.datastructur.es/materials/proj/proj1/proj1)            |                                                      |  [:link: link](./proj1/)  | 22/09/02 | :white_check_mark: | **640.0 / 640.0** |
+| [Project 1 Extra Credit: Autograding](https://sp21.datastructur.es/materials/proj/proj1/proj1ec) |                                                      | [:link: link](./proj1ec/) | 22/09/03 | :white_check_mark: |  **32.0 / 32.0**  |
+| [Project 2: Gitlet](https://sp21.datastructur.es/materials/proj/proj2/proj2)                     |                                                      |                           |          |                    |                   |
+| [Project 3: Game Sharing](https://sp21.datastructur.es/materials/proj/proj3/proj3)               |                                                      |                           |          |                    |                   |
 
 ## Labs
 
@@ -38,7 +39,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | [Lab 7: BSTMap](https://sp21.datastructur.es/materials/lab/lab7/lab7)                                       |                        |          |                    |                  |
 | [Lab 8: HashMap](https://sp21.datastructur.es/materials/lab/lab8/lab8)                                      |                        |          |                    |                  |
 
-## Auto Grader
+## Autograder with all
 
 | NAME                                 |       STATUS       |       SCORE       |
 | ------------------------------------ | :----------------: | :---------------: |
@@ -56,7 +57,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | Project 0: 2048                      | :white_check_mark: | **640.0 / 640.0** |
 | Project 1: Checkpoint                | :white_check_mark: |  **16.0 / 16.0**  |
 | Project 1: Data Structures           | :white_check_mark: | **640.0 / 640.0** |
-| Project 1: Data Structures EC        |                    |                   |
+| Project 1: Data Structures EC        | :white_check_mark: |  **32.0 / 32.0**  |
 | Project 2: Gitlet (Checkpoint)       |                    |                   |
 | Project 2: Gitlet                    |                    |                   |
 | Project 3 Part I: World Generation   |                    |                   |
