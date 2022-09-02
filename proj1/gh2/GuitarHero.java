@@ -5,14 +5,14 @@ import edu.princeton.cs.algs4.StdDraw;
 
 public class GuitarHero {
 
-    public static final String keyboard = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
+    public static final String KEYBOARD = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
 
     public static void main(String[] args) {
 
         /* create guitar strings, for concert q to the last key */
-        GuitarString[] strings = new GuitarString[keyboard.length()];
+        GuitarString[] strings = new GuitarString[KEYBOARD.length()];
 
-        for (int i = 0; i < keyboard.length(); i++) {
+        for (int i = 0; i < KEYBOARD.length(); i++) {
             double newCONCERT = calculateFrequency(i);
             strings[i] = new GuitarString(newCONCERT);
         }
@@ -23,7 +23,7 @@ public class GuitarHero {
             /* check if the user has typed a key; if so, process it */
             if (StdDraw.hasNextKeyTyped()) {
                 char key = StdDraw.nextKeyTyped();
-                int keyIdx = keyboard.indexOf(key);
+                int keyIdx = KEYBOARD.indexOf(key);
 
                 if (keyIdx >= 0) {
                     strings[keyIdx].pluck();
