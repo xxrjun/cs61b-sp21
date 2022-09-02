@@ -11,7 +11,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
      * Constructor
      */
     public ArrayDeque() {
-        items = (T[]) new Object[100];
+        items = (T[]) new Object[10];
         size = 0;
     }
 
@@ -36,10 +36,11 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             resize(size() * 2);
         }
 
-        for (int i = size(); i > 0; i--) {
-            items[i] = items[i - 1];
-        }
+        T[] newItems = (T[]) new Object[items.length];
+        System.arraycopy(items, 0, newItems, 1, size());
+        items = newItems;
         items[0] = item;
+
         size += 1;
     }
 
@@ -73,9 +74,9 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         if (!this.isEmpty()) {
             T firstItem = items[0];
 
-            for (int i = 0; i < size - 1; i++) {
-                items[i] = items[i + 1];
-            }
+            T[] newItems = (T[]) new Object[items.length];
+            System.arraycopy(items, 1, newItems, 0, size() - 1);
+            items = newItems;
 
             size -= 1;
 
@@ -180,13 +181,13 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         }
 
         Deque<T> other = null;
-        if(o instanceof LinkedListDeque){
+        if (o instanceof LinkedListDeque) {
             other = (LinkedListDeque<T>) o;
         } else if (o instanceof ArrayDeque) {
             other = (ArrayDeque<T>) o;
         }
 
-        if(other == null){
+        if (other == null) {
             return false;
         }
 
@@ -195,7 +196,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         }
 
         for (int i = 0; i < size(); i++) {
-            if (this.get(i) != other.get(i)) {
+            if (!this.get(i).equals(other.get(i))) {
                 return false;
             }
         }
