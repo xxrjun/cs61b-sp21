@@ -7,9 +7,23 @@ import static org.junit.Assert.*;
 
 
 public class ArrayDequeTest {
+    @Test
+    public void differentDequeTypeEqualsTest() {
+        LinkedListDeque<Integer> lld = new LinkedListDeque<>();
+        lld.addLast(10);
+        lld.addLast(15);
+        lld.addLast(25);
+
+        ArrayDeque<Integer> ad = new ArrayDeque<>();
+        ad.addLast(10);
+        ad.addLast(15);
+        ad.addLast(25);
+
+        assertTrue(lld.equals(ad));
+    }
 
     @Test
-    public void equalsTest(){
+    public void equalsTest() {
         ArrayDeque<Integer> ad1 = new ArrayDeque<>();
         ad1.addLast(10);
         ad1.addLast(15);
@@ -68,7 +82,7 @@ public class ArrayDequeTest {
 
         int N = 5000;
         for (int i = 0; i < N; i += 1) {
-            int operationNumber = StdRandom.uniform(0, 4);
+            int operationNumber = StdRandom.uniform(0, 7);
             if (operationNumber == 0) {
                 // addLast
                 int randVal = StdRandom.uniform(0, 100);
@@ -77,20 +91,34 @@ public class ArrayDequeTest {
 
                 assertEquals(correct.get(broken.size() - 1), broken.get(broken.size() - 1));
             } else if (operationNumber == 1) {
+                // addFirst
+                int randVal = StdRandom.uniform(0, 100);
+                correct.addFirst(randVal);
+                broken.addFirst(randVal);
+
+                assertEquals(correct.get(0), broken.get(0));
+            } else if (operationNumber == 2) {
                 // size
                 assertEquals(correct.size(), broken.size());
-            } else if (operationNumber == 2) {
+            } else if (operationNumber == 3) {
                 // getLast
                 assertEquals(correct.get(broken.size() - 1), broken.get(broken.size() - 1));
-            } else if (operationNumber == 3) {
+            } else if (operationNumber == 4) {
                 // removeLast
                 assertEquals(correct.removeLast(), broken.removeLast());
-            } else if (correct.size() == 0) {
+            } else if (operationNumber == 5) {
+                // removeFirst
+                assertEquals(correct.removeFirst(), broken.removeFirst());
+            } else if (operationNumber == 6) {
                 // isEmpty
-                assertTrue(correct.isEmpty());
-                assertTrue(broken.isEmpty());
+                if (correct.size() == 0) {
+                    assertTrue(correct.isEmpty());
+                    assertTrue(broken.isEmpty());
+                } else {
+                    assertFalse(correct.isEmpty());
+                    assertFalse(broken.isEmpty());
+                }
             }
         }
     }
-
 }
