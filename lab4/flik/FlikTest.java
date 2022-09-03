@@ -1,13 +1,14 @@
 package flik;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 
 public class FlikTest {
 
     @Test
-    public void isSameNumberTest(){
+    public void isSameNumberTest() {
         Flik f = new Flik();
 
         assertTrue(f.isSameNumber(10, 10));
@@ -17,10 +18,10 @@ public class FlikTest {
 
 
     @Test
-    public void bigAmountTest(){
+    public void bigAmountTest() {
         Flik f = new Flik();
 
-        for(int i = 0, j = 0 ; i < 500 && j < 500 ; i++, j++){
+        for (int i = 0, j = 0; i < 500 && j < 500; i++, j++) {
             assertTrue(String.valueOf(i) + " and " + String.valueOf(j) + " should be equal.", f.isSameNumber(i, j));
         }
     }
