@@ -39,7 +39,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | [Lab 7: BSTMap](https://sp21.datastructur.es/materials/lab/lab7/lab7)                                       |                        |          |                    |                  |
 | [Lab 8: HashMap](https://sp21.datastructur.es/materials/lab/lab8/lab8)                                      |                        |          |                    |                  |
 
-## Autograder with all
+## Autograder DashBoard
 
 | NAME                                 |       STATUS       |       SCORE       |
 | ------------------------------------ | :----------------: | :---------------: |
