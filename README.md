@@ -47,8 +47,8 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | Lab 2: Debugging                     | :white_check_mark: |  **64.0 / 64.0**  |
 | Lab 3: Randomized Testing and Timing | :white_check_mark: |  **64.0 / 64.0**  |
 | Lab 4: Debugging                     |                    |                   |
-| Lab 4A: Git Exercise Part A          |                    |                   |
-| Lab 4B: Git Exercise Part B          |                    |                   |
+| Lab 4A: Git Exercise Part A          | :white_check_mark: |  **16.0 / 16.0**  |
+| Lab 4B: Git Exercise Part B          | :white_check_mark: |  **16.0 / 16.0**  |
 | Lab 6: Getting Started on Project 2  |                    |                   |
 | Lab 7: BST Map                       |                    |                   |
 | Lab 8: Hash Map                      |                    |                   |
