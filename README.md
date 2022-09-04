@@ -43,7 +43,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 
 ## Autograder Dashboard
 
-Getting **all test passed** even some labs's or projects' final score was multiplied by 2.00 since some assignments doesn't require
+Getting **_ALL TEST PASSED_** even some labs' or projects' final score was multiplied by 2.00 since some assignments doesn't require
 total perfection for full credit.
 
 | NAME                                 |       STATUS       |       SCORE       |
