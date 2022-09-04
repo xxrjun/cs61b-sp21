@@ -35,7 +35,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | [Lab 3: Timing Tests and Randomized Comparison Tests](https://sp21.datastructur.es/materials/lab/lab3/lab3) | [:link: link](./lab3/) | 22/08/30 | :white_check_mark: | **64.0 / 64.0**  |
 | [Lab 4: Git and Debugging](https://sp21.datastructur.es/materials/lab/lab4/lab4)                            | [:link: link](./lab4/) | 22/09/03 | :white_check_mark: | **32.0 / 32.0**  |
 | [Lab 5: Project 1 Peer Code Review](https://sp21.datastructur.es/materials/lab/lab5/lab5)                   |                        |          |                    |                  |
-| [Lab 6: Getting Started on Project 2](https://sp21.datastructur.es/materials/lab/lab6/lab6)                 |                        |          |                    |                  |
+| [Lab 6: Getting Started on Project 2](https://sp21.datastructur.es/materials/lab/lab6/lab6)                 | [:link: link](./lab6/) | 22/09/05 | :white_check_mark: | **64.0 / 64.0**  |
 | [Lab 7: BSTMap](https://sp21.datastructur.es/materials/lab/lab7/lab7)                                       |                        |          |                    |                  |
 | [Lab 8: HashMap](https://sp21.datastructur.es/materials/lab/lab8/lab8)                                      |                        |          |                    |                  |
 
@@ -49,7 +49,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | Lab 4: Debugging                     | :white_check_mark: |  **32.0 / 32.0**  |
 | Lab 4A: Git Exercise Part A          | :white_check_mark: |  **16.0 / 16.0**  |
 | Lab 4B: Git Exercise Part B          | :white_check_mark: |  **16.0 / 16.0**  |
-| Lab 6: Getting Started on Project 2  |                    |                   |
+| Lab 6: Getting Started on Project 2  | :white_check_mark: |  **64.0 / 64.0**  |
 | Lab 7: BST Map                       |                    |                   |
 | Lab 8: Hash Map                      |                    |                   |
 | Lab 12: Getting Started on Project 3 |                    |                   |
