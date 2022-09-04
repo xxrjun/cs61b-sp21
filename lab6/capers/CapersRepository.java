@@ -63,6 +63,7 @@ public class CapersRepository {
     public static void makeDog(String name, String breed, int age) {
         Dog newDog = new Dog(name, breed, age);
         newDog.saveDog();
+
         System.out.println(newDog);
     }
 
@@ -78,6 +79,9 @@ public class CapersRepository {
         // Check whether the dog exist.
         if(dog != null){
             dog.haveBirthday();
+            dog.saveDog();
         }
+
+
     }
 }
