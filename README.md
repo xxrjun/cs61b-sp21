@@ -16,7 +16,9 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | NAME        | _Your Name_                                           |
 | STUDENT ID  | _Just fill in what you want_                          |
 
-## Projects
+## Assignments
+
+### Projects
 
 | PROJECT                                                                                          |                         DEMO                         |           CODE            |   DATE   |       STATUS       | AUTOGRADER SCORE  |
 | ------------------------------------------------------------------------------------------------ | :--------------------------------------------------: | :-----------------------: | :------: | :----------------: | :---------------: |
@@ -26,7 +28,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | [Project 2: Gitlet](https://sp21.datastructur.es/materials/proj/proj2/proj2)                     |                                                      |                           |          |                    |                   |
 | [Project 3: Game Sharing](https://sp21.datastructur.es/materials/proj/proj3/proj3)               |                                                      |                           |          |                    |                   |
 
-## Labs
+### Labs
 
 | LAB                                                                                                         |          CODE          |   DATE   |       STATUS       | AUTOGRADER SCORE |
 | ----------------------------------------------------------------------------------------------------------- | :--------------------: | :------: | :----------------: | :--------------: |
@@ -40,6 +42,9 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | [Lab 8: HashMap](https://sp21.datastructur.es/materials/lab/lab8/lab8)                                      |                        |          |                    |                  |
 
 ## Autograder Dashboard
+
+Getting **all test passed** even some labs's or projects' final score was multiplied by 2.00 since some assignments doesn't require
+total perfection for full credit.
 
 | NAME                                 |       STATUS       |       SCORE       |
 | ------------------------------------ | :----------------: | :---------------: |
