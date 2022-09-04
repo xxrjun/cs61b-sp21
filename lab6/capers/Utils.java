@@ -19,16 +19,20 @@ import java.util.Formatter;
 import java.util.List;
 
 
-/** Assorted utilities.
- *  @author P. N. Hilfinger
+/**
+ * Assorted utilities.
+ *
+ * @author P. N. Hilfinger
  */
 class Utils {
 
     /* READING AND WRITING FILE CONTENTS */
 
-    /** Return the entire contents of FILE as a byte array.  FILE must
-     *  be a normal file.  Throws IllegalArgumentException
-     *  in case of problems. */
+    /**
+     * Return the entire contents of FILE as a byte array.  FILE must
+     * be a normal file.  Throws IllegalArgumentException
+     * in case of problems.
+     */
     static byte[] readContents(File file) {
         if (!file.isFile()) {
             throw new IllegalArgumentException("must be a normal file");
@@ -40,17 +44,21 @@ class Utils {
         }
     }
 
-    /** Return the entire contents of FILE as a String.  FILE must
-     *  be a normal file.  Throws IllegalArgumentException
-     *  in case of problems. */
+    /**
+     * Return the entire contents of FILE as a String.  FILE must
+     * be a normal file.  Throws IllegalArgumentException
+     * in case of problems.
+     */
     static String readContentsAsString(File file) {
         return new String(readContents(file), StandardCharsets.UTF_8);
     }
 
-    /** Write the result of concatenating the bytes in CONTENTS to FILE,
-     *  creating or overwriting it as needed.  Each object in CONTENTS may be
-     *  either a String or a byte array.  Throws IllegalArgumentException
-     *  in case of problems. */
+    /**
+     * Write the result of concatenating the bytes in CONTENTS to FILE,
+     * creating or overwriting it as needed.  Each object in CONTENTS may be
+     * either a String or a byte array.  Throws IllegalArgumentException
+     * in case of problems.
+     */
     static void writeContents(File file, Object... contents) {
         try {
             if (file.isDirectory()) {
@@ -72,8 +80,10 @@ class Utils {
         }
     }
 
-    /** Return an object of type T read from FILE, casting it to EXPECTEDCLASS.
-     *  Throws IllegalArgumentException in case of problems. */
+    /**
+     * Return an object of type T read from FILE, casting it to EXPECTEDCLASS.
+     * Throws IllegalArgumentException in case of problems.
+     */
     static <T extends Serializable> T readObject(File file,
                                                  Class<T> expectedClass) {
         try {
@@ -83,12 +93,14 @@ class Utils {
             in.close();
             return result;
         } catch (IOException | ClassCastException
-                | ClassNotFoundException excp) {
+                 | ClassNotFoundException excp) {
             throw new IllegalArgumentException(excp.getMessage());
         }
     }
 
-    /** Write OBJ to FILE. */
+    /**
+     * Write OBJ to FILE.
+     */
     static void writeObject(File file, Serializable obj) {
         writeContents(file, serialize(obj));
     }
@@ -96,16 +108,20 @@ class Utils {
 
     /* OTHER FILE UTILITIES */
 
-    /** Return the concatentation of FIRST and OTHERS into a File designator,
-     *  analogous to the {@link java.nio.file.Paths.#get(String, String[])}
-     *  method. */
+    /**
+     * Return the concatenation of FIRST and OTHERS into a File designator,
+     * analogous to the {@link java.nio.file.Paths.#get(String, String[])}
+     * method.
+     */
     static File join(String first, String... others) {
         return Paths.get(first, others).toFile();
     }
 
-    /** Return the concatentation of FIRST and OTHERS into a File designator,
-     *  analogous to the {@link java.nio.file.Paths.#get(String, String[])}
-     *  method. */
+    /**
+     * Return the concatenation of FIRST and OTHERS into a File designator,
+     * analogous to the {@link java.nio.file.Paths.#get(String, String[])}
+     * method.
+     */
     static File join(File first, String... others) {
         return Paths.get(first.getPath(), others).toFile();
     }
@@ -113,7 +129,9 @@ class Utils {
 
     /* SERIALIZATION UTILITIES */
 
-    /** Returns a byte array containing the serialized contents of OBJ. */
+    /**
+     * Returns a byte array containing the serialized contents of OBJ.
+     */
     static byte[] serialize(Serializable obj) {
         try {
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -133,9 +151,10 @@ class Utils {
     /**
      * Prints out MESSAGE and exits with error code -1.
      * Note:
-     *     The functionality for erroring/exit codes is different within Gitlet
-     *     so DO NOT use this as a reference.
-     *     Refer to the spec for more information.
+     * The functionality for erroring/exit codes is different within Gitlet
+     * so DO NOT use this as a reference.
+     * Refer to the spec for more information.
+     *
      * @param message message to print
      */
     public static void exitWithError(String message) {
@@ -145,8 +164,10 @@ class Utils {
         System.exit(-1);
     }
 
-    /** Return a RuntimeException whose message is composed from MSG and ARGS as
-     *  for the String.format method. */
+    /**
+     * Return a RuntimeException whose message is composed from MSG and ARGS as
+     * for the String.format method.
+     */
     static RuntimeException error(String msg, Object... args) {
         return new RuntimeException(String.format(msg, args));
     }
