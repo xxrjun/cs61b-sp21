@@ -1,30 +1,31 @@
-You must answer at least 4 questions, but the remaining ones are optional. The main goal of this file is to get you thinking critically about your own work, but we will also use these self reflections at the end of the semester when we do our internal review of the course.
+You must answer at least 4 questions, but the remaining ones are optional. The main goal of this file is to get you thinking critically about your own work, but we will also use these self-reflections at the end of the semester when we do our internal review of the course.
 
 ArrayDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: Using circular ArrayDeque reduces the complexity in addFirst().
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A: In my test code, I made 7 tests including randomizedTest().
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A: None. I think my code is elegant enough, it doesn't have any repeated parts or redundant code.
+And the function usageDealer(), it removes repeated code and make addFirst(), addLast(), removeLast() and removeFirst() more clean.
 
 Q: What did you learn by talking to your partner about writing ArrayDeque?
 
-A:
+A: 
 
-Q: What do you wish you would have known before writing ArrayDeque, if anything?
+Q: What do you wish you would have known before writing ArrayDeque if anything?
 
-A:
+A: None
 
 Q: If you wrote ArrayDeque again, what would you do differently, if anything?
 
-A:
+A: I would treat my array as circular at the beginning rather than change a lot of code after I found the non-circular array would cause performance problems.
 
 -----
 
@@ -32,15 +33,15 @@ LinkedListDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: None.
 
-Q: What's something you felt proud of in your code, if anything?
+Q: What's something you felt proud of in your code if anything?
 
-A:
+A: None.
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A: None. My code doesn’t have repeated parts and redundant code.
 
 Q: What did you learn by talking to your partner about writing LinkedListDeque?
 
@@ -48,11 +49,11 @@ A:
 
 Q: What do you wish you would have known before writing LinkedListDeque, if anything?
 
-A:
+A: None.
 
 Q: If you wrote LinkedListDeque again, what would you do differently, if anything?
 
-A:
+A: None. I would do the same process if I wrote LinkedListDeque again.
 
 -----
 
@@ -60,4 +61,39 @@ Meta:
 
 Q: Did you like this design review process? Anything we should do differently next time?
 
-A: 
+A:
+
+-----
+
+Others in ArrayDeque:
+
+Q: What was the most annoying bug you had and how did you fix it? Did you use the debugger? Did you fix it by adding special cases? Did you do any change-and-pray (where you make a tiny change and hope the AG approves)?
+
+A: There are no bugs, but I got the performance test that failed. I use the timing test which in lab3 to analyze the performance. No. I didn’t add special cases.
+
+Q: Did you end up cutting anything out to make your code simpler? If so, what?
+
+A: Yes, I made a function usageDealer() to make my code simpler. It makes my adding and removing functions getting more clear. Most importantly, it is easier to maintain and modify if we want to adjust our memory usage plan.
+
+Q: Do you have any private helper methods?
+
+A: Yes, as mentioned above, the usageDealer() function is a helpful private helper method.
+
+
+-----
+
+Others in LinkedListDeque:
+
+Q: What was the most annoying bug you had and how did you fix it? Did you use the debugger? Did you fix it by adding special cases? Did you do any change-and-pray (where you make a tiny change and hope the AG approves)?
+
+A: None.
+
+Q: Did you end up cutting anything out to make your code simpler? If so, what?
+
+A: None. 
+
+Q: Do you have any private helper methods?
+
+A: Yes, getRecursive() is the only private helper method in my LinkedListDeque class.
+
+
