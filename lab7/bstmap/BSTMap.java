@@ -17,15 +17,6 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
     }
 
     /**
-     * Returns true is this BSTMap is empty.
-     *
-     * @return {@code true} if this BSTMap is empty; {@code false} otherwise.
-     */
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    /**
      * Sets the root as null.
      */
     @Override
@@ -33,6 +24,14 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         root = null;
     }
 
+    /**
+     * Returns true if and only if this dictionary contains KEY as the
+     * key of some key-value pair
+     *
+     * @param key the key
+     * @return {@code true} if and only if this BSTMap contains KEY as
+     * the key of some key-value pair, {@code false} otherwise.
+     */
     @Override
     public boolean containsKey(K key) {
         if (root == null) {
