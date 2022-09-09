@@ -38,7 +38,7 @@ Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
 | [Lab 4: Git and Debugging](https://sp21.datastructur.es/materials/lab/lab4/lab4)                            | [:link: link](./lab4/) | 22/09/03 | :white_check_mark: | **_32.0 / 32.0_** |
 | [Lab 5: Project 1 Peer Code Review](https://sp21.datastructur.es/materials/lab/lab5/lab5)                   | [:link: link](./lab5/) | 22/09/05 | :white_check_mark: |    **_NONE_**     |
 | [Lab 6: Getting Started on Project 2](https://sp21.datastructur.es/materials/lab/lab6/lab6)                 | [:link: link](./lab6/) | 22/09/05 | :white_check_mark: | **_64.0 / 64.0_** |
-| [Lab 7: BSTMap](https://sp21.datastructur.es/materials/lab/lab7/lab7)                                       | [:link: link](./lab7/) | 22/09/09 | :white_check_mark: |  **64.0 / 64.0**  |
+| [Lab 7: BSTMap](https://sp21.datastructur.es/materials/lab/lab7/lab7)                                       | [:link: link](./lab7/) | 22/09/09 | :white_check_mark: | **_64.0 / 64.0_** |
 | [Lab 8: HashMap](https://sp21.datastructur.es/materials/lab/lab8/lab8)                                      |                        |          |                    |                   |
 
 ## Autograder Dashboard
