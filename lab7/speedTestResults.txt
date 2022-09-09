@@ -1,0 +1,20 @@
+A. InsertRandomSpeedTest
+
+Length of each string: 10
+| # strings to insert into the map 	| 10000    	| 300000             	| 1000000            	| 5000000            	| 10000000           	| 50000000           	|
+|----------------------------------	|----------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|
+| class bstmap.ULLMap              	| 0.14 sec 	| --Stack Overflow-- 	| --Stack Overflow-- 	| --Stack Overflow-- 	| --Stack Overflow-- 	| --Stack Overflow-- 	|
+| class bstmap.BSTMap              	| 0.00 sec 	| 0.21 sec           	| 1.24 sec           	| 6.83 sec           	| 15.67 sec          	| 116.01 sec         	|
+| Java's Built-in TreeMap          	| 0.00 sec 	| 0.18 sec           	| 0.86 sec           	| 5.79 sec           	| 13.60 sec          	| 94.74 sec          	|
+| Java's Built-in HashMap          	| 0.00 sec 	| 0.07 sec           	| 0.28 sec           	| 1.76 sec           	| 4.01 sec           	| 31.92 sec          	|
+
+
+B. InsertInOrderSpeedTest
+
+key-value pairs are inserted in lexicographically-increasing order
+| # strings to insert into the map 	| 10000    	| 20000              	| 30000              	| 100000             	|
+|----------------------------------	|----------	|--------------------	|--------------------	|--------------------	|
+| class bstmap.ULLMap              	| 0.33 sec 	| 1.17 sec           	| 3.65 sec           	| --Stack Overflow-- 	|
+| class bstmap.BSTMap              	| 0.39 sec 	| --Stack Overflow-- 	| --Stack Overflow-- 	| --Stack Overflow-- 	|
+| Java's Built-in TreeMap          	| 0.01 sec 	| 0.00 sec           	| 0.01 sec           	| 0.03 sec           	|
+| Java's Built-in HashMap          	| 0.00 sec 	| 0.00 sec           	| 0.02 sec           	| 0.01 sec           	|
