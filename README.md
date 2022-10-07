@@ -4,6 +4,8 @@ Start this course from 2022/08/01.
 
 Thanks for Josh Hug and TAs!
 
+If you think this repo is helpful to you, don't forget star this repo :).
+
 ## Getting Started
 
 Course Link: [CS61B Sp21](https://sp21.datastructur.es/)
