@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.BST;
 
 import java.util.*;
 
-public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>, Iterable<K> {
+public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     private Node root;   // root of BSTMap
 
@@ -190,7 +190,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>, Iterabl
         return deletedNodeVal;
     }
 
-    public Node remove(Node node, K key) {
+    private Node remove(Node node, K key) {
         if (node == null) return null;
 
         /* Find the key we want to delete and replace it with its successor. */
