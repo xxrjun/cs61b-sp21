@@ -292,10 +292,8 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
             Node cur = list.remove(0);
 
             /* Do not add node into list if is null. */
-            if (cur.left != null)
-                list.add(cur.left);
-            if (cur.right != null)
-                list.add(cur.right);
+            if (cur.left != null) list.add(cur.left);
+            if (cur.right != null) list.add(cur.right);
 
             return cur.key;
         }
