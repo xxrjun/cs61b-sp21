@@ -223,18 +223,17 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>, Iterabl
      * @return the node with minimum key (inorder successor).
      */
     private Node min(Node node) {
-        if(node.left == null) return node;
+        if (node.left == null) return node;
 
         return min(node.left);
     }
 
     /**
-     *
      * @param node
      * @return the subtree without minimum key (inorder successor).
      */
-    private Node removeMin(Node node){
-        if(node.left == null)  return node.right;
+    private Node removeMin(Node node) {
+        if (node.left == null) return node.right;
         node.left = removeMin(node.left);
 
         node.size = size(node.left) + size(node.right) + 1;
@@ -243,7 +242,6 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>, Iterabl
     }
 
     /**
-     *
      * @return {@code BSTMapKeySet}
      */
     @Override
