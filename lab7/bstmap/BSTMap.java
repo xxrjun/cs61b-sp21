@@ -2,12 +2,11 @@ package bstmap;
 
 import edu.princeton.cs.algs4.BST;
 
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
-public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
+public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>, Iterable<K> {
 
-    private BSTNode root;   // root of BSTMap
+    private Node root;   // root of BSTMap
 
     /**
      * Initializes an empty BSTMap
@@ -38,11 +37,11 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
             return false;
         }
 
-        BSTNode cur = root;
+        Node cur = root;
         int cmp;
-        while(cur != null){
+        while (cur != null) {
             cmp = key.compareTo(cur.key);
-            if(cmp == 0){
+            if (cmp == 0) {
                 return true;
             } else if (cmp > 0) {
                 cur = cur.right;
@@ -67,7 +66,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return get(root, key);
     }
 
-    private V get(BSTNode node, K key) {
+    private V get(Node node, K key) {
         if (key == null) throw new IllegalArgumentException("calls get() with a null key");
         if (node == null) return null;
 
@@ -90,7 +89,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
     }
 
     // return the number of key-value pairs in BSTMap rooted at specified node.
-    private int size(BSTNode node) {
+    private int size(Node node) {
         if (node == null) return 0;
         else return node.size;
     }
@@ -101,8 +100,8 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      * Deletes the specified key (and its associated value) from this BSTMap
      * if the specified value if {@code null}.
      *
-     * @param key
-     * @param val
+     * @param key the key
+     * @param val the value
      * @throws IllegalArgumentException if {@code key} is {@code null}.
      */
     @Override
@@ -112,9 +111,9 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     }
 
-    private BSTNode put(BSTNode node, K key, V val) {
+    private Node put(Node node, K key, V val) {
         if (node == null) {
-            return new BSTNode(key, val, 1);
+            return new Node(key, val, 1);
         }
 
         int cmp = key.compareTo(node.key);
@@ -134,43 +133,173 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     }
 
-
     public void printInOrder() {
-        throw new UnsupportedOperationException();
+        printInOrder(root);
     }
 
-    private class BSTNode {
-        private BSTNode left, right;
+    private void printInOrder(Node node) {
+        if (root == null) {
+            return;
+        }
+
+        printInOrder(root.left);
+        System.out.println(node.key.toString() + " -> " + node.val.toString());
+        printInOrder(root.right);
+    }
+
+    /**
+     * Remove key-value value by key.
+     *
+     * @param key the key
+     * @return the value in key-value pair we removed.
+     */
+    @Override
+    public V remove(K key) {
+        if (key == null) {
+            throw new IllegalArgumentException("calls remove() with a null key.");
+        }
+
+        if (!containsKey(key)) {
+            return null;
+        }
+
+        V deletedNodeVal = get(key);
+
+
+        root = remove(root, key);
+
+
+        return deletedNodeVal;
+    }
+
+    @Override
+    public V remove(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException("calls remove() with a null key.");
+        }
+
+        if (!containsKey(key)) {
+            return null;
+        }
+
+        V deletedNodeVal = get(key);
+
+        root = remove(root, key);
+
+
+        return deletedNodeVal;
+    }
+
+    public Node remove(Node node, K key) {
+        if (node == null) return null;
+
+        /* Find the key we want to delete and replace it with its successor. */
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            node.left = remove(node.left, key);
+        } else if (cmp > 0) {
+            node.right = remove(node.right, key);
+        } else {
+            if (node.left == null) {
+                return node.right;
+            }
+            if (node.right == null) {
+                return node.left;
+            }
+
+            Node originRoot = node;
+            node = min(node.right);
+            node.right = removeMin(originRoot.right);
+            node.left = originRoot.left;
+        }
+
+        node.size = size(node.left) + size(node.right) + 1;
+
+        return node;
+
+    }
+
+    /**
+     * @return the node with minimum key (inorder successor).
+     */
+    private Node min(Node node) {
+        if(node.left == null) return node;
+
+        return min(node.left);
+    }
+
+    /**
+     *
+     * @param node
+     * @return the subtree without minimum key (inorder successor).
+     */
+    private Node removeMin(Node node){
+        if(node.left == null)  return node.right;
+        node.left = removeMin(node.left);
+
+        node.size = size(node.left) + size(node.right) + 1;
+
+        return node;
+    }
+
+    /**
+     *
+     * @return {@code BSTMapKeySet}
+     */
+    @Override
+    public Set<K> keySet() {
+        Set<K> BSTMapKeySet = new HashSet<>();
+
+        for (K key : this) {
+            BSTMapKeySet.add(key);
+        }
+
+        return BSTMapKeySet;
+    }
+
+    @Override
+    public Iterator<K> iterator() {
+        return new BSTMapIterator();
+    }
+
+    private class Node {
+        private Node left, right;
         private final K key;
         private V val;
+
         private int size;
 
-        public BSTNode(K key, V val, int size) {
+        public Node(K key, V val, int size) {
             this.key = key;
             this.val = val;
             this.size = size;
         }
     }
 
+    private class BSTMapIterator implements Iterator<K> {
+        List<Node> list;
 
-    @Override
-    public Set<K> keySet() {
-        throw new UnsupportedOperationException();
-    }
+        public BSTMapIterator() {
+            list = new LinkedList<>();
+            list.add(root);
+        }
 
-    @Override
-    public V remove(K key) {
-        throw new UnsupportedOperationException();
-    }
+        @Override
+        public boolean hasNext() {
+            return !list.isEmpty();
+        }
 
-    @Override
-    public V remove(K key, V value) {
-        throw new UnsupportedOperationException();
+        @Override
+        public K next() {
+            Node cur = list.remove(0);
 
-    }
+            /* Do not add node into list if is null. */
+            if (cur.left != null)
+                list.add(cur.left);
+            if (cur.right != null)
+                list.add(cur.right);
 
-    @Override
-    public Iterator<K> iterator() {
-        throw new UnsupportedOperationException();
+            return cur.key;
+        }
     }
 }
