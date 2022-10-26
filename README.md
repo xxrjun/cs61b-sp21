@@ -2,9 +2,10 @@
 
 Start this course from 2022/08/01.
 
-Thanks for Josh Hug and TAs!
+Temporarily stop in 2022/09/09 cause the heavy loading from my junior year.  
+Coming back soon in winter vacation!
 
-If you think this repo is helpful to you, don't forget star this repo :).
+Thanks for Josh Hug and TAs!
 
 ## Getting Started
 
